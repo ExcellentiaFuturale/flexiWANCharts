@@ -3,7 +3,7 @@
 
 # Cloudinit User Data
 flexiedge:
-  token: xxxxx
+  token:
 
 # Kubevirt Configuration
 kubevirt:
@@ -60,3 +60,4 @@ ethernets:
 #      search: [flexiwan.local]
 #      addresses:
 #       - 8.8.8.8
+#       - 1.1.1.1
