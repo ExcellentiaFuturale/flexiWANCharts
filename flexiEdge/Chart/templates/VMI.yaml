@@ -1,0 +1,54 @@
+---
+apiVersion: kubevirt.io/v1
+kind: VirtualMachine
+metadata:
+  labels:
+    kubevirt.io/vm: {{(lower .Release.Name)}}
+  name: {{(lower .Chart.Name)}}
+  namespace: {{.Release.Name}}
+spec:
+  dataVolumeTemplates:
+  - metadata:
+      name: {{ printf "%s-dv" (lower .Release.Name) }}
+    spec:
+      pvc:
+        accessModes:
+        - ReadWriteOnce
+        resources:
+          requests:
+            storage: 20Gi
+        storageClassName: {{ (lower .Release.Name) }}
+      source:
+        registry:
+          url: "{{ printf "docker://flexiwan/%s:%s" .Chart.Name .Chart.AppVersion }}"
+          pullMethod: node
+  running: true
+  template:
+    metadata:
+      labels:
+        kubevirt.io/vm: {{(lower .Release.Name)}}
+    spec:
+      domain:
+        devices:
+          disks:
+            - disk:
+                bus: virtio
+              name: {{(lower .Release.Name)}}
+            - disk:
+                bus: virtio
+              name: cloudinitdisk
+          interfaces:
+{{- include "flexiedge.interfaces" . | indent 14 }}
+        resources:
+          requests:
+            memory: {{.Values.kubevirt.memory}}
+            cpu: {{.Values.kubevirt.cpu}}
+      networks:
+{{- include "flexiedge.networks" . | indent 12 }}
+      volumes:
+        - dataVolume:
+            name: {{printf "%s-dv" (lower .Release.Name)}}
+          name: {{(lower .Release.Name)}}
+        - name: cloudinitdisk
+          cloudInitNoCloud:
+{{ include "flexiedge.CloudInit" . | indent 13 }}

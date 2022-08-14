@@ -1,0 +1,17 @@
+name: flexiedge
+apiVersion: v2
+version: 0.0.1
+appVersion: 5.3.14
+description: flexiWAN Edge Helm chart for Kubernetes/Kubevirt
+type: application
+keywords:
+  - flexiwan
+  - flexiedge
+home: https://flexiwan.com/
+icon: https://manage.flexiwan.com/favicon-32x32.png
+sources:
+  - https://gitlab.com/flexiwangroup/flexiwancharts/
+maintainers:
+  - name: Sassy Natan
+    email: sassyn@flexiwan.com
+    url: https://flexiwan.com

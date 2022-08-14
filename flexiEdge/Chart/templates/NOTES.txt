@@ -1,0 +1,20 @@
+{{- if or ( gt .Capabilities.KubeVersion.Major "1" ) ( ge .Capabilities.KubeVersion.Minor "16" ) }}
+
+==========================================================================
+Thank you for using flexiWAN - The World’s First Open Source SD-WAN & SASE
+==========================================================================
+
+1. flexiEdge is now running on your Kubernetes cluster
+
+2. NOTE: It may take a few minutes for the VM to be available.
+   You can watch the status of by running 'kubectl get --namespace {{ .Release.Name }} vmi -w'
+
+3. To uninstall helm chart use the command:
+   helm delete {{ .Release.Name }}
+
+---------
+
+{{- else }}
+To run these charts, please use K8s ver >= v1.16
+{{- end }}
+

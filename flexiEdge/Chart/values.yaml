@@ -1,0 +1,62 @@
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+# Cloudinit User Data
+flexiedge:
+  token: xxxxx
+
+# Kubevirt Configuration
+kubevirt:
+  name: flexiedge
+  running: true
+  memory: 4096M
+  cpu: 2
+  mount: /mnt
+
+# Network Configuration
+ethernets:
+  cni0:
+    # Default network interface (mandatory). Can not be disbaled.
+    enabled: true 
+    type: bridge
+    dhcp: true
+    nameservers:
+       search: [flexiwan.local]
+       addresses:
+        - 8.8.8.8
+        - 1.1.1.1
+  cni1:
+    enabled: true
+    type: sriov
+    sriov: smartedge-apps/sriov-vfio-network-c1p1
+    dhcp: false
+    address: 192.168.1.1/24
+    nameservers:
+       search: [flexiwan.local]
+       addresses:
+        - 8.8.8.8
+        - 1.1.1.1
+# cniX:
+#   enable of disable the cniX interface (mandatory)
+#   enabled: true
+
+#   interface type. Valid optional: sriov, bridge (mandatory)
+#   type: sriov
+
+#   sriov virtual function alias (mandatory when using type: sriov)
+#   sriov: smartedge-apps/sriov-vfio-network-c1p1
+
+#   enable or disable DHCP (mandatory)
+#   dhcp: false
+
+#   if DHCP is disable, please provide an IPv4 address (mandatory)
+#   address: 192.168.1.2/24
+
+#   if DHCP is disable, please provide an IPv4 gateway (optinal)
+#   gateway: 192.168.1.1
+
+#   if DHCP is disable, please provide DNS info 
+#   nameservers:
+#      search: [flexiwan.local]
+#      addresses:
+#       - 8.8.8.8
