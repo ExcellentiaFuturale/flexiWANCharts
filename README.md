@@ -1,2 +1,0 @@
-flexiWAN Helm Charts
-====================
