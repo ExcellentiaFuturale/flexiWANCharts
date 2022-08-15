@@ -1,7 +1,7 @@
 DIST_DIR ?= $(CURDIR)/dist
 CHART_DIR ?= $(CURDIR)/Chart
 TMPDIR ?= /tmp
-HELM_REPO ?= /mnt/charts
+HELM_REPO ?= /mnt/charts/flexiwan/
 LINT_USE_DOCKER ?= true
 LINT_CMD ?= ct lint --config=../Lint/ct.yaml
 PROJECT ?= gitlab.com/flexiwangroup/flexiwancharts/
