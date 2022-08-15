@@ -42,13 +42,13 @@ Add flexiEdge's chart repository to Helm:
 ```bash
 helm repo add flexiwan https://helm.flexiwan.com/main
 ```
-#### For testing
+#### For Testing
 
 ```bash
 helm repo add flexiwan https://helm.flexiwan.com/testing
 ```
 
-#### For unstable
+#### For Unstable
 
 ```bash
 helm repo add flexiwan https://helm.flexiwan.com/unstable
