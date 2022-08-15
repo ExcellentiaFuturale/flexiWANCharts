@@ -92,10 +92,23 @@ The command removes all the Kubernetes components associated with the chart and 
 
 ### Network parameters
 
-| Name                 | Description                                                          | Value                     |
-| -------------------- | -------------------------------------------------------------------- | ------------------------- |
-| `flexiedge.token`    | Multus CNI image registry                                            | `""`                      |
-
+| Name                                          | Description                             | Value                     |
+| --------------------------------------------- | --------------------------------------- | ------------------------- |
+| `ethernets.cni0.enabled`                      | Multus CNI image registry               | `""`                      |
+| `ethernets.cni0.type`                         | Multus CNI image registry               | `""`                      |
+| `ethernets.cni0.dhcp`                         | Multus CNI image registry               | `""`                      |
+| `ethernets.cni0.nameservers.search`           | Multus CNI image registry               | `""`                      |
+| `ethernets.cni0.nameservers.search.addresses` | Multus CNI image registry               | `""`                      |
+| `ethernets.cni1.enabled`                      | Multus CNI image registry               | `""`                      |
+| `ethernets.cni1.type`                         | Multus CNI image registry               | `""`                      |
+| `ethernets.cni1.dhcp`                         | Multus CNI image registry               | `""`                      |
+| `ethernets.cni1.nameservers.search`           | Multus CNI image registry               | `""`                      |
+| `ethernets.cni1.nameservers.search.addresses` | Multus CNI image registry               | `""`                      |
+| `ethernets.cniX.enabled`                      | Multus CNI image registry               | `""`                      |
+| `ethernets.cniX.type`                         | Multus CNI image registry               | `""`                      |
+| `ethernets.cniX.dhcp`                         | Multus CNI image registry               | `""`                      |
+| `ethernets.cniX.nameservers.search`           | Multus CNI image registry               | `""`                      |
+| `ethernets.cniX.nameservers.search.addresses` | Multus CNI image registry               | `""`                      |
 
 ### Exposing the flexiEdge dashboard
 
