@@ -84,9 +84,9 @@ The command removes all the Kubernetes components associated with the chart and 
 
 | Name                 | Description                                                          | Value                     |
 | -------------------- | -------------------------------------------------------------------- | ------------------------- |
-| `kubevirt.name`      | Kubevirt VMI Name.                                                   | `flexiedge`               |
+| `kubevirt.name`      | VirtualMachines Name.                                                | `flexiedge`               |
 | `kubevirt.running`   | VirtualMachines have a Running setting that determines whether or    |                           |
-|                      | not there should be a guest running or not.                          | `true`                    |
+|                        not there should be a guest running or not.                           `true`                    |
 | `kubevirt.memory`    | VirtualMachines Memory allocation (Minimum 4G).                      | `4096M`                   |
 | `kubevirt.cpu`       | VirtualMachines VCPU allocation (Minimum 2 cores).                   | `2`                       |
 | `kubevirt.mount`     | VirtualMachines Persistent Volume location on the host.              | `/mnt`                    |
