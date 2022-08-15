@@ -66,7 +66,7 @@ endif
 clean:
 	@echo "== Cleaning..."
 	@rm -rf $(DIST_DIR)
-	@rm -rf $(HELM_REPO)
+	#@rm -rf $(HELM_REPO)
 	@echo "== Cleaning Finished"
 
 ################################## Technical targets
