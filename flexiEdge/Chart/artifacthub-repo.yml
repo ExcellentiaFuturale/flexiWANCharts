@@ -1,6 +1,0 @@
-# Artifact Hub repository metadata file
-# The ID of the Artifact Hub repository where the packages will be published to (enables verified publisher).
-repositoryID: ee3665a4-112b-4685-9383-2dd0caba8d7d
-owners:
-  - name: DevOps
-    email: devops@flexiwan.com
