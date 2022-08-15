@@ -41,18 +41,9 @@ build: global-requirements $(DIST_DIR)
 deploy: global-requirements $(DIST_DIR) $(HELM_REPO)
 	@echo "== Deploying Chart..."
 
-# go over all brach - take the helm for each tag, tgz it and copt to the place
-#remove the test folder
-
-#	@rm -rf $(CURDIR)/gh-pages.zip
-#	@curl -sSLO https://$(PROJECT)/archive/gh-pages.zip
-#	@unzip -oj $(CURDIR)/gh-pages.zip -d $(HELM_REPO)/
-#
-#
-#
 	@cp $(DIST_DIR)/*tgz $(CURDIR)/artifacthub-repo.yml $(HELM_REPO)/
 	@cp $(CURDIR)/README.md $(HELM_REPO)/index.md
-	@helm repo index --merge $(HELM_REPO)/index.yaml --url https://helm.traefik.io/traefik/ $(HELM_REPO)
+	@helm repo index --merge $(HELM_REPO)/index.yaml --url https://helm.flexiwan.com/flexiedge/ $(HELM_REPO)
 	@echo "== Deploying Finished"
 
 # Cleanup leftovers and distribution dir
