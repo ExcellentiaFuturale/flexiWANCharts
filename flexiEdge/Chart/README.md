@@ -62,16 +62,16 @@ helm repo update
 
 ### Deploying the chart
 
-To install the chart with the release name `my-release`:
+To install the chart with the release name `my-flexiedge`:
 
 ```bash
-helm install my-release flexiwan/flexiedge
+helm install my-flexiedge flexiwan/flexiedge
 ```
 > **Tip**: List all releases using `helm list -A`
 
 ### Undeploying the Chart
 
-To uninstall/delete the `my-release` deployment:
+To uninstall/delete the `my-flexiedge` deployment:
 
 ```bash
 $ helm delete my-release
