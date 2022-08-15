@@ -36,7 +36,7 @@ Add flexiEdge's chart repository to Helm:
 [![Artifact Hub](https://img.shields.io/endpoint?url=https://artifacthub.io/badge/repository/flexiedge)](https://artifacthub.io/packages/search?repo=flexiedge)
 
 ```bash
-helm repo add flexiwan https://helm.flexiwan.com/flexiedge/
+helm repo add flexiwan https://helm.flexiwan.com/
 ```
 
 You can update the chart repository by running:
@@ -103,39 +103,20 @@ The command removes all the Kubernetes components associated with the chart and 
 
 
 
-### Exposing the Traefik dashboard
+### Exposing the flexiEdge dashboard
 
-This HelmChart does not expose the Traefik dashboard by default, for security concerns.
+This HelmChart does not expose the flexiEdge dashboard by default, for security concerns.
 Thus, there are multiple ways to expose the dashboard.
 For instance, the dashboard access could be achieved through a port-forward :
 
 ```bash
-kubectl port-forward $(kubectl get pods --selector "app.kubernetes.io/name=traefik" --output=name) 9000:9000
+kubectl port-forward $(kubectl get pods --selector "app.kubernetes.io/name=flexiEdge" --output=name) 8080:80
 ```
 
-Accessible with the url: http://127.0.0.1:9000/dashboard/
+Accessible with the url: http://127.0.0.1:8080/
 
 Another way would be to apply your own configuration, for instance,
-by defining and applying an IngressRoute CRD (`kubectl apply -f dashboard.yaml`):
-
-```yaml
-# dashboard.yaml
-apiVersion: traefik.containo.us/v1alpha1
-kind: IngressRoute
-metadata:
-  name: dashboard
-spec:
-  entryPoints:
-    - web
-  routes:
-    - match: Host(`traefik.localhost`) && (PathPrefix(`/dashboard`) || PathPrefix(`/api`))
-      kind: Rule
-      services:
-        - name: api@internal
-          kind: TraefikService
-```
-
-Accessible with the url: http://traefik.localhost/dashboard/
+by defining and applying an IngressRoute CRD.
 
 ## Contributing
 
