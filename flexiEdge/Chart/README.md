@@ -1,10 +1,10 @@
 # flexiEdge
 
-`flexiEdge` is core component in the [flexiWAN](https://flexiwan.com/) Eco System.
+`flexiEdge` is core component in the [flexiWAN](https://flexiwan.com/) ECO System.
 
 ## Introduction
 
-This chart bootstraps `flexiEdge` as a Kubernetes VM intsnace otop of 
+This chart bootstraps `flexiEdge` as a Kubernetes VM intsnace on top of 
 KubeVirt <https://kubevirt.io/>.
 
 ### Philosophy
