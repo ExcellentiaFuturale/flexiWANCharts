@@ -67,44 +67,34 @@ The command removes all the Kubernetes components associated with the chart and 
 
 ## Parameters
 
-### Global parameters
-
-| Name                      | Description                                     | Value |
-| ------------------------- | ----------------------------------------------- | ----- |
-| `global.imageRegistry`    | Global Docker image registry                    | `""`  |
-| `global.imagePullSecrets` | Global Docker registry secret names as an array | `[]`  |
-
-
 ### Common parameters
 
 | Name                | Description                                                                                | Value           |
 | ------------------- | ------------------------------------------------------------------------------------------ | --------------- |
-| `nameOverride`      | String to partially override multus.fullname template (will maintain the release name) | `""`            |
-| `fullnameOverride`  | String to fully override multus.fullname template                                      | `""`            |
-| `kubeVersion`       | Force target Kubernetes version (using Helm capabilities if not set)                       | `""`            |
-| `clusterDomain`     | Kubernetes Cluster Domain                                                                  | `cluster.local` |
-| `extraDeploy`       | Extra objects to deploy (value evaluated as a template)                                    | `[]`            |
-| `commonLabels`      | Add labels to all the deployed resources                                                   | `{}`            |
-| `commonAnnotations` | Add annotations to all the deployed resources                                              | `{}`            |
+| `nameOverride`      | String to partially override flexiedge.fullname template (will maintain the release name)  | `""`            |
+| `fullnameOverride`  | String to fully override multus.fullname template                                          | `""`            |
 
-
-### Multus CNI parameters
+### flexiEdge parameters
 
 | Name                 | Description                                                          | Value                     |
 | -------------------- | -------------------------------------------------------------------- | ------------------------- |
-| `image.registry`     | Multus CNI image registry                                            | `docker.io`               |
-| `image.repository`   | Multus CNI image repository                                          | `startechnica/multus`     |
-| `image.tag`          | Multus CNI image tag (immutable tags are recommended)                | `1.21.5-debian-10-r3`     |
-| `image.pullPolicy`   | Multus CNI image pull policy                                         | `IfNotPresent`            |
-| `image.pullSecrets`  | Specify docker-registry secret names as an array                     | `[]`                      |
-| `image.debug`        | Set to true if you would like to see extra information on logs       | `false`                   |
-| `hostAliases`        | Deployment pod host aliases                                          | `[]`                      |
-| `command`            | Override default container command (useful when using custom images) | `[]`                      |
-| `args`               | Override default container args (useful when using custom images)    | `[]`                      |
-| `extraEnvVars`       | Extra environment variables to be set on Multus CNI containers       | `[]`                      |
-| `extraEnvVarsCM`     | ConfigMap with extra environment variables                           | `""`                      |
-| `extraEnvVarsSecret` | Secret with extra environment variables                              | `""`                      |
+| `flexiedge.token`    | Multus CNI image registry                                            | `""`                      |
 
+### Kubevirt parameters
+
+| Name                 | Description                                                          | Value                     |
+| -------------------- | -------------------------------------------------------------------- | ------------------------- |
+| `Kubevirt.name`      | Multus CNI image registry                                            | `flexiedge`               |
+| `Kubevirt.running`   | Multus CNI image registry                                            | `true`                    |
+| `Kubevirt.memory`    | Multus CNI image registry                                            | `4096M`                   |
+| `Kubevirt.cpu`       | Multus CNI image registry                                            | `2`                       |
+| `Kubevirt.mount`     | Multus CNI image registry                                            | `/mnt`                    |
+
+### Network parameters
+
+| Name                 | Description                                                          | Value                     |
+| -------------------- | -------------------------------------------------------------------- | ------------------------- |
+| `flexiedge.token`    | Multus CNI image registry                                            | `""`                      |
 
 
 ### Exposing the flexiEdge dashboard
