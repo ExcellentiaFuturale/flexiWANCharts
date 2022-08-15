@@ -78,18 +78,17 @@ The command removes all the Kubernetes components associated with the chart and 
 
 | Name                 | Description                                                          | Value                     |
 | -------------------- | -------------------------------------------------------------------- | ------------------------- |
-| `flexiedge.token`    | flexiWAN organization token for device registration.                  | `""`                      |
+| `flexiedge.token`    | flexiWAN organization token for device registration.                 | `""`                      |
 
 ### Kubevirt parameters
 
-| Name                 | Description                                                          | Value                     |
-| -------------------- | -------------------------------------------------------------------- | ------------------------- |
-| `kubevirt.name`      | VirtualMachines Name.                                                | `flexiedge`               |
-| `kubevirt.running`   | VirtualMachines have a Running setting that determines whether or not there should be a guest running or not.    |                           |
-|                                                  `true`                    |
-| `kubevirt.memory`    | VirtualMachines Memory allocation (Minimum 4G).                      | `4096M`                   |
-| `kubevirt.cpu`       | VirtualMachines VCPU allocation (Minimum 2 cores).                   | `2`                       |
-| `kubevirt.mount`     | VirtualMachines Persistent Volume location on the host.              | `/mnt`                    |
+| Name                 | Description                                                                                 | Value             |
+| -------------------- | ------------------------------------------------------------------------------------------- | ----------------- |
+| `kubevirt.name`      | VirtualMachines Name.                                                                       | `flexiedge`       |
+| `kubevirt.running`   | VirtualMachines Run Strategies. Determines whether or not there should be a guest running.  | `true`            |
+| `kubevirt.memory`    | VirtualMachines Memory allocation (Minimum 4G).                                             | `4096M`           |
+| `kubevirt.cpu`       | VirtualMachines VCPU allocation (Minimum 2 cores).                                          | `2`               |
+| `kubevirt.mount`     | VirtualMachines Persistent Volume location on the host.                                     | `/mnt`            |
 
 ### Network parameters
 
