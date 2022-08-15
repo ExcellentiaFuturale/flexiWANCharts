@@ -33,9 +33,10 @@ With the command `kubectl version`, make sure that you have:
 - Kubernetes 1.16+
 
 Add flexiEdge's chart repository to Helm:
+[![Artifact Hub](https://img.shields.io/endpoint?url=https://artifacthub.io/badge/repository/flexiedge)](https://artifacthub.io/packages/search?repo=flexiedge)
 
 ```bash
-helm repo add flexiedge https://????????????
+helm repo add flexiwan https://helm.flexiwan.com/flexiedge/
 ```
 
 You can update the chart repository by running:
@@ -47,7 +48,7 @@ helm repo update
 ### Deploying the chart
 
 ```bash
-helm install ?? ??/??
+helm install my-release flexiwan/flexiedge
 ```
 > **Tip**: List all releases using `helm list -A`
 
@@ -56,7 +57,7 @@ helm install ?? ??/??
 To uninstall/delete the `my-release` deployment:
 
 ```bash
-$ helm delete my-??? --namespace my-release
+$ helm delete my-release
 ```
 The command removes all the Kubernetes components associated with the chart and deletes the release.
 
