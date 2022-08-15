@@ -48,12 +48,12 @@ deploy: global-requirements $(DIST_DIR) $(HELM_REPO)
 
 	ifeq ($(HELM_REPO_TYPE),testing)
 		@echo "== Deploying testing Chart..."
-		sed -i 's/appVersion: latest/appVersion: testing/g' Chart/Chart.yaml
+		@sed -i 's/appVersion: latest/appVersion: testing/g' Chart/Chart.yaml
 	endif
 
 	ifeq ($(HELM_REPO_TYPE),unstable)
 		@echo "== Deploying unstable Chart..."
-		sed -i 's/appVersion: latest/appVersion: unstable/g' Chart/Chart.yaml
+		@sed -i 's/appVersion: latest/appVersion: unstable/g' Chart/Chart.yaml
 	endif
 
 
