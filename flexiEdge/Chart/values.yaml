@@ -52,7 +52,7 @@ ethernets:
 #   if DHCP is disable, please provide an IPv4 address (mandatory)
 #   address: 192.168.1.2/24
 
-#   if DHCP is disable, please provide an IPv4 gateway (optinal)
+#   if DHCP is disable, please provide an IPv4 gateway (optional)
 #   gateway: 192.168.1.1
 
 #   if DHCP is disable, please provide DNS info 
