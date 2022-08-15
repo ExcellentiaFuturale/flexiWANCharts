@@ -48,7 +48,7 @@ helm repo update
 ### Deploying the chart
 
 ```bash
-helm install my-release flexiwan/flexiedge
+helm install `my-release` flexiwan/flexiedge
 ```
 > **Tip**: List all releases using `helm list -A`
 
@@ -57,7 +57,7 @@ helm install my-release flexiwan/flexiedge
 To uninstall/delete the `my-release` deployment:
 
 ```bash
-$ helm delete my-release
+$ helm delete `my-release`
 ```
 The command removes all the Kubernetes components associated with the chart and deletes the release.
 
