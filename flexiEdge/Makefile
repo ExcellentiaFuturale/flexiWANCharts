@@ -41,7 +41,21 @@ build: global-requirements $(DIST_DIR)
 
 # Prepare the Helm repository with the latest packaged charts
 deploy: global-requirements $(DIST_DIR) $(HELM_REPO)
-	@echo "== Deploying Chart..."
+
+	ifeq ($(HELM_REPO_TYPE),main)
+		@echo "== Deploying main Chart..."
+	endif
+
+	ifeq ($(HELM_REPO_TYPE),testing)
+		@echo "== Deploying testing Chart..."
+		sed -i 's/appVersion: latest/appVersion: testing/g' Chart/Chart.yaml
+	endif
+
+	ifeq ($(HELM_REPO_TYPE),unstable)
+		@echo "== Deploying unstable Chart..."
+		sed -i 's/appVersion: latest/appVersion: unstable/g' Chart/Chart.yaml
+	endif
+
 
 	@cp $(DIST_DIR)/*tgz $(CHART_DIR)/main-artifacthub-repo.yml $(HELM_REPO)/
 	@cp $(CHART_DIR)/README.md $(HELM_REPO)/index.md
