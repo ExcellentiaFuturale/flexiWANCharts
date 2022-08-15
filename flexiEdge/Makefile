@@ -3,13 +3,12 @@ CHART_DIR ?= $(CURDIR)/Chart
 TMPDIR ?= /tmp
 HELM_REPO ?= /mnt/charts/flexiedge
 LINT_USE_DOCKER ?= true
-LINT_CMD ?= ct lint --config=Lint/ct.yaml
+LINT_CMD ?= ct lint --config=../Lint/ct.yaml
 PROJECT ?= gitlab.com/flexiwangroup/flexiwancharts/
 ################################## Functionnal targets
 
 # Default Target: run all
-# all: clean test build deploy
-all: clean build deploy
+ all: clean test build deploy
 
 test: lint unit-test
 
@@ -19,7 +18,7 @@ lint: lint-requirements
         @git remote add flexiedge https://gitlab.com/flexiwangroup/flexiwancharts/ >/dev/null 2>&1 || true
         @git fetch flexiedge master >/dev/null 2>&1 || true
 ifeq ($(LINT_USE_DOCKER),true)
-        @docker run --rm -t -v $(CURDIR):/charts -w /charts quay.io/helmpack/chart-testing:v3.5.0 $(LINT_CMD)
+        @docker run --rm -t -v $(CURDIR)/../:/charts -w /charts/flexiEdge/Chart quay.io/helmpack/chart-testing:v3.5.0 $(LINT_CMD)
 else
         cd $(CHART_DIR)/tests && $(LINT_CMD)
 endif
@@ -29,7 +28,7 @@ endif
 unit-test: helm-unittest
         @echo "== Unit Testing Chart..."
         # helm plugin install https://github.com/vbehar/helm3-unittest
-        @helm unittest --color --update-snapshot ./flexiedge
+        @helm unittest --color --update-snapshot ./Chart
         @echo "== Unit Tests Finished..."
 
 
