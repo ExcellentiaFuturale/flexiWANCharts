@@ -32,6 +32,8 @@ With the command `kubectl version`, make sure that you have:
 
 - Kubernetes 1.16+
 
+### Adding Chart Repository
+
 Add flexiEdge's chart repository to Helm:
 [![Artifact Hub](https://img.shields.io/endpoint?url=https://artifacthub.io/badge/repository/flexiedge)](https://artifacthub.io/packages/search?repo=flexiedge)
 
