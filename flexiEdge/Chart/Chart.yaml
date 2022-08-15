@@ -1,7 +1,7 @@
 name: flexiedge
 apiVersion: v2
 version: 0.0.1
-appVersion: 5.3.14
+appVersion: latest
 description: flexiWAN Edge Helm chart for Kubernetes/Kubevirt
 type: application
 keywords:
