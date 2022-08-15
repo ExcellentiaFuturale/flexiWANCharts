@@ -1,7 +1,7 @@
 DIST_DIR ?= $(CURDIR)/dist
 CHART_DIR ?= $(CURDIR)/Chart
 TMPDIR ?= /tmp
-HELM_REPO ?= /mnt/charts/
+HELM_REPO ?= /mnt/charts
 LINT_USE_DOCKER ?= true
 LINT_CMD ?= ct lint --config=../Lint/ct.yaml
 PROJECT ?= gitlab.com/flexiwangroup/flexiwancharts/
@@ -43,7 +43,7 @@ deploy: global-requirements $(DIST_DIR) $(HELM_REPO)
         @echo "== Deploying Chart..."
 
         @cp $(DIST_DIR)/*tgz $(CHART_DIR)/artifacthub-repo.yml $(HELM_REPO)/
-#       @cp $(CHART_DIR)/README.md $(HELM_REPO)/index.md
+        @cp $(CHART_DIR)/README.md $(HELM_REPO)/index.md
         @helm repo index --merge $(HELM_REPO)/index.yaml --url https://helm.flexiwan.com/ $(HELM_REPO)
         @echo "== Deploying Finished"
 
