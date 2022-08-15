@@ -5,7 +5,7 @@
 ## Introduction
 
 This chart bootstraps `flexiEdge` as a Kubernetes VM intsnace on top of 
-KubeVirt <https://kubevirt.io/>.
+[KubeVirt](https://kubevirt.io/) technology.
 
 ### Philosophy
 
