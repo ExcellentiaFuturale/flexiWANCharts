@@ -37,8 +37,21 @@ With the command `kubectl version`, make sure that you have:
 Add flexiEdge's chart repository to Helm:
 [![Artifact Hub](https://img.shields.io/endpoint?url=https://artifacthub.io/badge/repository/flexiedge)](https://artifacthub.io/packages/search?repo=flexiedge)
 
+#### For Main
+
 ```bash
-helm repo add flexiwan https://helm.flexiwan.com/
+helm repo add flexiwan https://helm.flexiwan.com/main
+```
+#### For testing
+
+```bash
+helm repo add flexiwan https://helm.flexiwan.com/testing
+```
+
+#### For unstable
+
+```bash
+helm repo add flexiwan https://helm.flexiwan.com/unstable
 ```
 
 You can update the chart repository by running:
