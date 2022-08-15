@@ -56,7 +56,7 @@ helm install my-release flexiwan/flexiedge
 ```
 > **Tip**: List all releases using `helm list -A`
 
-## Undeploying the Chart
+### Undeploying the Chart
 
 To uninstall/delete the `my-release` deployment:
 
