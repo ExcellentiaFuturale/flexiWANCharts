@@ -17,7 +17,7 @@ test: lint unit-test
 lint: lint-requirements
 	@echo "== Linting Chart..."
 	@git remote add flexiedge https://gitlab.com/flexiwangroup/flexiwancharts/ >/dev/null 2>&1 || true
-	@git fetch flexiedge master >/dev/null 2>&1 || true
+	@git fetch --verbose flexiedge master >/dev/null 2>&1 || true
 ifeq ($(LINT_USE_DOCKER),true)
 	@docker run --rm -t -v $(CURDIR)/../:/charts -w /charts/flexiEdge/Chart quay.io/helmpack/chart-testing:v3.5.0 $(LINT_CMD)
 else
