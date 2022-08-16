@@ -74,7 +74,7 @@ helm install my-flexiedge flexiwan/flexiedge
 To uninstall/delete the `my-flexiedge` deployment:
 
 ```bash
-$ helm delete my-release
+$ helm delete my-flexiedge
 ```
 The command removes all the Kubernetes components associated with the chart and deletes the release.
 
