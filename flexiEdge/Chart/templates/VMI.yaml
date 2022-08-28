@@ -20,7 +20,7 @@ spec:
         storageClassName: {{ (lower .Release.Name) }}
       source:
         registry:
-          url: "{{ printf "docker://flexiwan/%s:%s" .Chart.Name .Chart.AppVersion }}"
+          url: "{{ printf "docker://flexiwan/%s:%s" .Chart.Name .Values.ImageVersion }}"
           pullMethod: node
   running: true
   template:
