@@ -120,14 +120,13 @@ The command removes all the Kubernetes components associated with the chart and 
 | Name                                          | Description                                                     | Value                  |
 | --------------------------------------------- | --------------------------------------------------------------- | ---------------------- |
 | `ethernets.cni0.enabled`                      | Default network interface (mandatory). Can not be disbaled.     | `true`                 |
-| `ethernets.cni0.type`                         | Interface type. Valid optional: sriov, bridge (mandatory)       | `bridge`               |
-| `ethernets.cni0.sriov`                        | SRIOV Virtual Function alias (mandatory when using type: sriov) | ``                     |
+| `ethernets.cni0.type`                         | Interface type. Valid optional: bridge (mandatory)              | `bridge`               |
 | `ethernets.cni0.dhcp`                         | Enable or Disable DHCP (mandatory)                              | `true`                 |
 | `ethernets.cni0.address`                      | If DHCP is disable, please provide an IPv4 address (mandatory)  | ``                     |
 | `ethernets.cni0.gateway`                      | if DHCP is disable, please provide an IPv4 gateway (optional)   | ``                     |
 | `ethernets.cni0.nameservers.search`           | DNS Name Server Search                                          | `flexiwan.local`       |
 | `ethernets.cni0.nameservers.search.addresses` | DNS Name Servers                                                | `[8.8.8.8, 1.1.1.1]`   |
-| `ethernets.cni1.enabled`                      | Default network interface (mandatory). Can not be disbaled.     | `true`                 |
+| `ethernets.cni1.enabled`                      | Default network interface (mandatory).                          | `true`                 |
 | `ethernets.cni1.type`                         | Interface type. Valid optional: sriov, bridge (mandatory)       | `sriov`                |
 | `ethernets.cni1.sriov`                        | SRIOV Virtual Function alias (mandatory when using type: sriov) | `smartedge-apps/sriov-vfio-network-c1p1`|
 | `ethernets.cni1.dhcp`                         | Enable or Disable DHCP (mandatory)                              | `false`                 |
