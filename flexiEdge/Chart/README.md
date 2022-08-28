@@ -81,11 +81,23 @@ The command removes all the Kubernetes components associated with the chart and 
 ## Parameters
 
 ### Common parameters
+| Name                | Description                                                                                | Value           |
+| ------------------- | ------------------------------------------------------------------------------------------ | --------------- |
+| `nameOverride`      | String to partially override flexiedge.fullname template (will maintain the release name)  | `""`            |
+| `fullnameOverride`  | String to fully override multus.fullname template                                          | `""`            |
+
+
+### Image parameters
+| Name                | Description                                                                                | Value           |
+| ------------------- | ------------------------------------------------------------------------------------------ | --------------- |
+| `ImageVersion`      | flexiEdge Docker Image version                                                             | `latest`        |
+
 
 | Name                | Description                                                                                | Value           |
 | ------------------- | ------------------------------------------------------------------------------------------ | --------------- |
 | `nameOverride`      | String to partially override flexiedge.fullname template (will maintain the release name)  | `""`            |
 | `fullnameOverride`  | String to fully override multus.fullname template                                          | `""`            |
+
 
 ### flexiEdge parameters
 
