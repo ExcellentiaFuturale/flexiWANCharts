@@ -75,7 +75,7 @@ networkData: |-
       {{- $index = $index | int | add1 }}
       {{- if eq .dhcp true }}
          dhcp4: true
-         {{- if eq .routes false }}
+         {{- if eq .dhcproutes false }}
          dhcp4-overrides:
           use-routes: false
          {{- end }}
