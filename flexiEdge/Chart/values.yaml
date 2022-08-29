@@ -22,7 +22,7 @@ ethernets:
     enabled: true 
     type: bridge
     dhcp: true
-    routes: true
+    dhcproutes: true
     nameservers:
        search: [flexiwan.local]
        addresses:
@@ -33,7 +33,7 @@ ethernets:
     type: sriov
     sriov: smartedge-apps/sriov-vfio-network-c1p1
     dhcp: false
-    routes: false
+    dhcproutes: false
     address: 192.168.1.1/24
     nameservers:
        search: [flexiwan.local]
