@@ -32,6 +32,14 @@ With the command `kubectl version`, make sure that you have:
 
 - Kubernetes 1.16+
 
+With the command `kubectl get kubevirt.kubevirt.io/kubevirt -n kubevirt -o=jsonpath="{.status.observedKubeVirtVersion}"`, make sure that you have 
+
+- KubeVirt 0.48.1+
+
+With the command `cat /etc/cni/net.d/00-multus.conf  | jq .cniVersion`, make sure that you have:
+
+- Multus CNI 0.3.1+
+
 ### Adding Chart Repository
 
 Add flexiEdge's chart repository to Helm:
