@@ -36,7 +36,7 @@ With the command `kubectl get kubevirt.kubevirt.io/kubevirt -n kubevirt -o=jsonp
 
 - KubeVirt 0.48.1+
 
-With the command `cat /etc/cni/net.d/00-multus.conf  | jq .cniVersion`, make sure that you have:
+With the command `cat /etc/cni/net.d/00-multus.conf | jq .cniVersion`, make sure that you have:
 
 - Multus CNI 0.3.1+
 
