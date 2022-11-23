@@ -94,17 +94,36 @@ networkData: |-
            {{- range $dkey, $dval := .nameservers.addresses }}
              - {{ $dval}}
            {{- end }}
+        {{- if eq .type "bridge" }}
+         routes:
+        {{- if eq .dhcproutes false }}
+          - to: 169.254.1.1
+            scope: link
+        {{- end }}
+        {{- end }}
     {{- end }}
     {{- end }}
 userData: |-
-  {{- if .Values.flexiedge.token }}
   #cloud-config
   write_files:
-   - content: {{ .Values.flexiedge.token }}
-     owner: root:root
-     path: /etc/flexiwan/agent/token.txt
+  {{- if .Values.flexiedge.token }}
+   - path: /etc/flexiwan/agent/token.txt
      permissions: '0644'
+     owner: root:root
+     content: {{ .Values.flexiedge.token }}
   {{- end }}
+   - path: /etc/environment
+     permissions: '0644'
+     owner: root:root
+     append: true
+     content: |  
+       KubernetesAPI={{ .Values.KubernetesAPI }}
+       NameSpace={{ .Release.Name }}
+
+  runcmd:
+   - [ curl, -L, "https://helm.flexiwan.com/scripts/smartedge.sh", --output, /tmp/smartedge.sh ]
+   - [ chmod, 775, /tmp/smartedge.sh ]
+   - [ tmp/smartedge.sh ]
 {{- end }}
 
 

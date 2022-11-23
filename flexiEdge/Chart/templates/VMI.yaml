@@ -36,6 +36,9 @@ spec:
               name: {{(lower .Release.Name)}}
             - disk:
                 bus: virtio
+              name: serviceaccountdisk
+            - disk:
+                bus: virtio
               name: cloudinitdisk
           interfaces:
 {{- include "flexiedge.interfaces" . | indent 14 }}
@@ -49,6 +52,9 @@ spec:
         - dataVolume:
             name: {{printf "%s-dv" (lower .Release.Name)}}
           name: {{(lower .Release.Name)}}
+        - name: serviceaccountdisk
+          serviceAccount:
+            serviceAccountName: {{.Release.Name}}
         - name: cloudinitdisk
           cloudInitNoCloud:
 {{ include "flexiedge.CloudInit" . | indent 13 }}

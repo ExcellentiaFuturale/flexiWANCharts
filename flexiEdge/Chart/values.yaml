@@ -1,7 +1,12 @@
 # This is a YAML-formatted file.
 # Declare variables to be passed into your templates.
 
+image:
+  pullPolicy: Always
+
 ImageVersion: latest
+
+KubernetesAPI: 172.27.56.15
 
 # Cloudinit User Data
 flexiedge:
@@ -14,6 +19,7 @@ kubevirt:
   memory: 4096M
   cpu: 2
   mount: /mnt
+
 
 # Network Configuration
 ethernets:
@@ -28,6 +34,7 @@ ethernets:
        addresses:
         - 8.8.8.8
         - 1.1.1.1
+
   cni1:
     enabled: true
     type: sriov
@@ -40,6 +47,7 @@ ethernets:
        addresses:
         - 8.8.8.8
         - 1.1.1.1
+
 # cniX:
 #   enable of disable the cniX interface (mandatory)
 #   enabled: true
