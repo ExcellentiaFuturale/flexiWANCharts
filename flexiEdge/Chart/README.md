@@ -89,29 +89,23 @@ The command removes all the Kubernetes components associated with the chart and 
 ## Parameters
 
 ### Common parameters
+
 | Name                | Description                                                                                | Value           |
 | ------------------- | ------------------------------------------------------------------------------------------ | --------------- |
 | `nameOverride`      | String to partially override flexiedge.fullname template (will maintain the release name)  | `""`            |
-| `fullnameOverride`  | String to fully override multus.fullname template                                          | `""`            |
-
+| `fullnameOverride`  | String to fully override flexiedge.fullname template                                       | `""`            |
 
 ### Image parameters
+
 | Name                | Description                                                                                | Value           |
 | ------------------- | ------------------------------------------------------------------------------------------ | --------------- |
 | `ImageVersion`      | flexiEdge Docker Image version                                                             | `latest`        |
 
-
 ### Kubernetes parameters
+
 | Name                | Description                                                                                | Value           |
 | ------------------- | ------------------------------------------------------------------------------------------ | --------------- |
 | `KubernetesAPI`     | Kubernetes API Address                                                                     | `""`            |
-
-
-| Name                | Description                                                                                | Value           |
-| ------------------- | ------------------------------------------------------------------------------------------ | --------------- |
-| `nameOverride`      | String to partially override flexiedge.fullname template (will maintain the release name)  | `""`            |
-| `fullnameOverride`  | String to fully override multus.fullname template                                          | `""`            |
-
 
 ### flexiEdge parameters
 
