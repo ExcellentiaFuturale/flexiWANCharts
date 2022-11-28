@@ -84,19 +84,19 @@ helm repo update
 
 ### Deploying the chart
 
-To install the chart with the release name `my-flexiedge`:
+To install the chart with the release name `flexiedge`:
 
 ```bash
-helm install my-flexiedge flexiwan/flexiedge
+helm install flexiedge flexiwan/flexiedge
 ```
 > **Tip**: List all releases using `helm list -A`
 
 ### Undeploying the Chart
 
-To uninstall/delete the `my-flexiedge` deployment:
+To uninstall/delete the `flexiedge` deployment:
 
 ```bash
-$ helm delete my-flexiedge
+$ helm delete flexiedge
 ```
 The command removes all the Kubernetes components associated with the chart and deletes the release.
 
@@ -182,7 +182,7 @@ Thank you for using flexiWAN - The World’s First Open Source SD-WAN & SASE
 1. flexiEdge is now running on your Kubernetes cluster
 
 2. NOTE: It may take a few minutes for the VM to be available.
-   You can watch the status of by running 'kubectl get --namespace my-flexiedge vmi -w'
+   You can watch the status of by running 'kubectl get --namespace flexiedge vmi -w'
 
 3. To uninstall helm chart use the command:
    helm delete flexiedge
@@ -245,7 +245,7 @@ flexiedge   2m47s   Running   10.245.14.167   ubuntu-4042ff21dd   True
 
 - Access the VM via the Virtual Console (default user: admin, default password: flexiwan)
 ```bash
-$ virtctl console flexiedge -n my-flexiedge
+$ virtctl console flexiedge -n flexiedge
 Successfully connected to flexiedge console. The escape sequence is ^]
 
 Ubuntu 18.04 LTS flexiedge ttyS0
