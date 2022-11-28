@@ -25,13 +25,12 @@ Accordingly, the encouraged approach to fulfill your needs:
 2. append your own configurations (`kubectl apply -f myconf.yaml`)
 3. extend this HelmChart ([as a Subchart](https://helm.sh/docs/chart_template_guide/subcharts_and_globals/))
 
-###Application Description
+### Application Description
 
 As Kubernetes containerized platforms become the next generation universal platform for Edge and Networking. The integration of flexiWAN makes it easy for Service Providers, ISVs, and SIs to onboard this technology and offer services based on it.
 This Helm Chart installs a flexiEdge networking Edge instance for secure connectivity supporting scenarios such as branch-to branch, branch-to-PoP, or remote user to branch offices or PoP.
 
 The application is centrally managed from the cloud using flexiManage.  It enhances the traffic availability, quality and security in the network.
-
 
 ## Installing
 
@@ -151,7 +150,7 @@ The command removes all the Kubernetes components associated with the chart and 
 | `ethernets.cni1.nameservers.search`           | DNS Name Server Search                                          | `flexiwan.local`       |
 | `ethernets.cni1.nameservers.search.addresses` | DNS Name Servers                                                | `[8.8.8.8, 1.1.1.1]`   |
 
-### Example
+## Example
 
 The following example provide a way to deploy flexiEdge with the following parameters:
 
@@ -201,7 +200,7 @@ Accessible with the url: http://127.0.0.1:8080/
 Another way would be to apply your own configuration, for instance,
 by defining and applying an IngressRoute CRD.
 
-### Uninstall Chart
+### Uninstall the Chart
 
 In order to delete flexiWAN simply run the following comman
 
@@ -210,8 +209,7 @@ $ helm uninstall my-flexiedge
 release "my-flexiedge" uninstalled
 ```
 
-
-### Troubleshooting
+## Troubleshooting
 
 To troubleshoot the Helm Chart installation process:
 
@@ -253,7 +251,7 @@ flexiedge login:
 
 To troubleshoot flexiWAN issues refer to the troubleshooting guide [here](https://docs.flexiwan.com/troubleshoot/overview.html)
 
-### Additional Information
+## Additional Information
 
 After deploying flexiWAN, follow the documentation steps [here](https://docs.flexiwan.com/management/management-login.html) to complete the configuration.
 Related material
