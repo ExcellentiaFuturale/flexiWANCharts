@@ -161,7 +161,10 @@ The following example provide a way to deploy flexiEdge with the following param
 - Token: ************************
 
 ```bash
-helm install flexiwan flexiwan/flexiedge  --set ethernets.cni0.dhcproutes=false --set ethernets.cni1.type=sriov --set ethernets.cni1.sriov=smartedge-apps/sriov-vfio-network-c1p1 --set ethernets.cni1.dhcp=false --set ethernets.cni1.address=172.16.0.2/29 --set ethernets.cni1.gateway=172.16.0.1 –flexiwan.token=”*******************************************************”
+helm install flexiwan flexiwan/flexiedge  --set ethernets.cni0.dhcproutes=false --set ethernets.cni1.type=sriov \
+--set ethernets.cni1.sriov=smartedge-apps/sriov-vfio-network-c1p1 --set ethernets.cni1.dhcp=false \
+--set ethernets.cni1.address=172.16.0.2/29 --set ethernets.cni1.gateway=172.16.0.1 \
+–flexiwan.token=”*******************************************************”
 
 NAME: flexiedge
 LAST DEPLOYED: Sun Aug 28 16:40:24 2022
@@ -180,7 +183,7 @@ Thank you for using flexiWAN - The World’s First Open Source SD-WAN & SASE
    You can watch the status of by running 'kubectl get --namespace my-flexiedge vmi -w'
 
 3. To uninstall helm chart use the command:
-   helm delete my-flexiedge
+   helm delete flexiedge
 
 ---------
 ```
@@ -205,8 +208,8 @@ by defining and applying an IngressRoute CRD.
 In order to delete flexiWAN simply run the following comman
 
 ```
-$ helm uninstall my-flexiedge
-release "my-flexiedge" uninstalled
+$ helm uninstall flexiedge
+release "flexiedge" uninstalled
 ```
 
 ## Troubleshooting
