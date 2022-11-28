@@ -52,6 +52,8 @@ With the command `cat /etc/cni/net.d/00-multus.conf | jq .cniVersion`, make sure
 
 - Multus CNI 0.3.1+
 
+Using SRIOV based interface requires to have the [SRIOV Network Device Plugin](https://github.com/k8snetworkplumbingwg/sriov-network-device-plugin) installed and configured.
+
 ### Adding Chart Repository
 
 Add flexiEdge's chart repository to Helm:
