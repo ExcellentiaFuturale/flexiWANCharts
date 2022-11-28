@@ -16,7 +16,7 @@ spec:
         - ReadWriteOnce
         resources:
           requests:
-            storage: 20Gi
+            storage: 25Gi
         storageClassName: {{ (lower .Release.Name) }}
       source:
         registry:
