@@ -252,12 +252,13 @@ flexiedge login:
 
 ```
 
-To troubleshoot flexiWAN issues refer to the troubleshooting guide [here](https://docs.flexiwan.com/troubleshoot/overview.html)
+To troubleshoot flexiWAN issues refer to the troubleshooting guide [here](https://docs.flexiwan.com/troubleshoot/overview.html).
 
 ## Additional Information
 
 After deploying flexiWAN, follow the documentation steps [here](https://docs.flexiwan.com/management/management-login.html) to complete the configuration.
-Related material
+
+### Related material
 
 https://flexiwan.com/
 https://flexiwan.com/academy/
