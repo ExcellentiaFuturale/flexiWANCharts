@@ -260,9 +260,9 @@ After deploying flexiWAN, follow the documentation steps [here](https://docs.fle
 
 ### Related material
 
-https://flexiwan.com/
-https://flexiwan.com/academy/
-https://docs.flexiwan.com/
+- https://flexiwan.com/
+- https://flexiwan.com/academy/
+- https://docs.flexiwan.com/
 
 ## Contributing
 
