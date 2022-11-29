@@ -158,8 +158,8 @@ The following example provide a way to deploy flexiEdge with the following param
 
 - Name: flexiwan
 - Ethernet interface:
- - CNI0 as calico interface with no dhcp router in disable mode
- - CNI1 as SRIOV interface assign to sriov-vfio-network-c1p1 with manual IP configuration (172.16.0.2/29 and Gateway 172.16.0.1)
+  - CNI0 as calico interface with no dhcp router in disable mode
+  - CNI1 as SRIOV interface assign to sriov-vfio-network-c1p1 with manual IP configuration (172.16.0.2/29 and Gateway 172.16.0.1)
 - Token: ************************
 
 ```bash
