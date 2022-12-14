@@ -172,7 +172,7 @@ The following example provide a way to deploy flexiEdge with the following param
 ```bash
 helm install flexiwan flexiwan/flexiedge  --set ethernets.cni0.dhcproutes=false --set ethernets.cni1.type=sriov \
 --set ethernets.cni1.sriov=smartedge-apps/sriov-vfio-network-c1p1 --set ethernets.cni1.dhcp=false \
---set ethernets.cni1.address=172.16.0.2/29 --set ethernets.cni1.gateway=172.16.0.1 --KubernetesAPI 172.26.1.1 \
+--set ethernets.cni1.address=172.16.0.2/29 --set ethernets.cni1.gateway=172.16.0.1 --KubernetesAPI=172.26.1.1 \
 –flexiwan.token=”*******************************************************”
 
 NAME: flexiedge
