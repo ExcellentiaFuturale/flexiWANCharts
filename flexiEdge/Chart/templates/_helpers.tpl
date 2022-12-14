@@ -112,7 +112,7 @@ userData: |-
      owner: root:root
      content: {{ .Values.flexiedge.token }}
   {{- end }}
-  {{- if .Values.Proxy.address }}
+  {{- if .Values.proxy.httpaddress }}
    - path: /etc/environment
      permissions: '0644'
      owner: root:root
