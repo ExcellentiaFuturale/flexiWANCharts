@@ -130,6 +130,13 @@ The command removes all the Kubernetes components associated with the chart and 
 | `kubevirt.cpu`       | VirtualMachines VCPU allocation (Minimum 2 cores).                                          | `2`               |
 | `kubevirt.mount`     | VirtualMachines Persistent Volume location on the host.                                     | `/mnt`            |
 
+### Proxy parameters
+
+| Name                 | Description                                                                  | Value                     |
+| -------------------- | ---------------------------------------------------------------------------- | ------------------------- |
+| `Proxy.httpaddress`  | Proxy Address IP address. Ex: http://proxy.domain.local:9000 (optional)      | `""`                      |
+| `Proxy.httspaddress` | Proxy Address IP address. Ex: https://proxy.domain.local:9001 (optional)     | `""`                      |
+
 ### Network parameters
 
 | Name                                          | Description                                                     | Value                  |
@@ -165,7 +172,7 @@ The following example provide a way to deploy flexiEdge with the following param
 ```bash
 helm install flexiwan flexiwan/flexiedge  --set ethernets.cni0.dhcproutes=false --set ethernets.cni1.type=sriov \
 --set ethernets.cni1.sriov=smartedge-apps/sriov-vfio-network-c1p1 --set ethernets.cni1.dhcp=false \
---set ethernets.cni1.address=172.16.0.2/29 --set ethernets.cni1.gateway=172.16.0.1 \
+--set ethernets.cni1.address=172.16.0.2/29 --set ethernets.cni1.gateway=172.16.0.1 --KubernetesAPI 172.26.1.1 \
 –flexiwan.token=”*******************************************************”
 
 NAME: flexiedge
