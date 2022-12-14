@@ -132,10 +132,10 @@ The command removes all the Kubernetes components associated with the chart and 
 
 ### Proxy parameters
 
-| Name                 | Description                                                                  | Value                     |
-| -------------------- | ---------------------------------------------------------------------------- | ------------------------- |
-| `proxy.httpaddress`  | Proxy Address IP address. Ex: http://proxy.domain.local:9000 (optional)      | `""`                      |
-| `proxy.httspaddress` | Proxy Address IP address. Ex: https://proxy.domain.local:9001 (optional)     | `""`                      |
+| Name                 | Description                                                          | Value                     |
+| -------------------- | -------------------------------------------------------------------- | ------------------------- |
+| `proxy.httpaddress`  | Proxy Address IP address. Ex: proxy.domain.local:9000 (optional)     | `""`                      |
+| `proxy.httspaddress` | Proxy Address IP address. Ex: proxy.domain.local:9001 (optional)     | `""`                      |
 
 ### Network parameters
 
