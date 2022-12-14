@@ -20,6 +20,10 @@ kubevirt:
   cpu: 2
   mount: /mnt
 
+# Proxy Configuration
+Proxy:
+  httpaddress:
+  httpsaddress:
 
 # Network Configuration
 ethernets:
