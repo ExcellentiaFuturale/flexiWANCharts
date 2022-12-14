@@ -112,6 +112,7 @@ userData: |-
      owner: root:root
      content: {{ .Values.flexiedge.token }}
   {{- end }}
+  {{- if .Values.Proxy.Address }}
    - path: /etc/environment
      permissions: '0644'
      owner: root:root
@@ -119,13 +120,30 @@ userData: |-
      content: |  
        KubernetesAPI={{ .Values.KubernetesAPI }}
        NameSpace={{ .Release.Name }}
-
+       HTTPS_PROXY="http://{{ .Values.Proxy.Address }}"
+       HTTP_PROXY="http://{{ .Values.Proxy.Address }}"
+       NO_PROXY="127.0.0.1,localhost"
+   - path: /etc/apt/apt.conf.d/proxy.conf
+     permissions: '0644'
+     owner: root:root
+     append: true
+     content: |  
+       Acquire::http::Proxy "http://{{ .Values.Proxy.Address }}";
+       Acquire::https::Proxy "http://{{ .Values.Proxy.Address }}";
+  {{- else }}
+   - path: /etc/environment
+     permissions: '0644'
+     owner: root:root
+     append: true
+     content: |  
+       KubernetesAPI={{ .Values.KubernetesAPI }}
+       NameSpace={{ .Release.Name }}
+  {{- end }}
   runcmd:
    - [ curl, -L, "https://helm.flexiwan.com/scripts/smartedge.sh", --output, /tmp/smartedge.sh ]
    - [ chmod, 775, /tmp/smartedge.sh ]
    - [ tmp/smartedge.sh ]
 {{- end }}
-
 
 {{/* Create Network Interfaces to use */}}
 {{- define "flexiedge.interfaces" -}}
