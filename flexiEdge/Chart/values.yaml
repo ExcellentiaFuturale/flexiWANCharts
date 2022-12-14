@@ -21,7 +21,7 @@ kubevirt:
   mount: /mnt
 
 # Proxy Configuration
-Proxy:
+proxy:
   httpaddress:
   httpsaddress:
 
