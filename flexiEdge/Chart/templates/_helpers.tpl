@@ -112,7 +112,7 @@ userData: |-
      owner: root:root
      content: {{ .Values.flexiedge.token }}
   {{- end }}
-  {{- if .Values.Proxy.Address }}
+  {{- if .Values.Proxy.address }}
    - path: /etc/environment
      permissions: '0644'
      owner: root:root
@@ -120,16 +120,16 @@ userData: |-
      content: |  
        KubernetesAPI={{ .Values.KubernetesAPI }}
        NameSpace={{ .Release.Name }}
-       HTTPS_PROXY="http://{{ .Values.Proxy.Address }}"
-       HTTP_PROXY="http://{{ .Values.Proxy.Address }}"
+       HTTPS_PROXY="http://{{ .Values.Proxy.address }}"
+       HTTP_PROXY="http://{{ .Values.Proxy.address }}"
        NO_PROXY="127.0.0.1,localhost"
    - path: /etc/apt/apt.conf.d/proxy.conf
      permissions: '0644'
      owner: root:root
      append: true
      content: |  
-       Acquire::http::Proxy "http://{{ .Values.Proxy.Address }}";
-       Acquire::https::Proxy "http://{{ .Values.Proxy.Address }}";
+       Acquire::http::Proxy "http://{{ .Values.Proxy.address }}";
+       Acquire::https::Proxy "http://{{ .Values.Proxy.address }}";
   {{- else }}
    - path: /etc/environment
      permissions: '0644'
