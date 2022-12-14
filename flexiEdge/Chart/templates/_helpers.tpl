@@ -120,16 +120,16 @@ userData: |-
      content: |  
        KubernetesAPI={{ .Values.KubernetesAPI }}
        NameSpace={{ .Release.Name }}
-       HTTPS_PROXY="http://{{ .Values.Proxy.httpsaddress }}"
-       HTTP_PROXY="http://{{ .Values.Proxy.httpaddress }}"
+       HTTPS_PROXY="http://{{ .Values.proxy.httpsaddress }}"
+       HTTP_PROXY="http://{{ .Values.proxy.httpaddress }}"
        NO_PROXY="127.0.0.1,localhost"
    - path: /etc/apt/apt.conf.d/proxy.conf
      permissions: '0644'
      owner: root:root
      append: true
      content: |  
-       Acquire::https::Proxy "http://{{ .Values.Proxy.httpsaddress }}";
-       Acquire::http::Proxy "http://{{ .Values.Proxy.httpaddress }}";
+       Acquire::https::Proxy "http://{{ .Values.proxy.httpsaddress }}";
+       Acquire::http::Proxy "http://{{ .Values.proxy.httpaddress }}";
   {{- else }}
    - path: /etc/environment
      permissions: '0644'
