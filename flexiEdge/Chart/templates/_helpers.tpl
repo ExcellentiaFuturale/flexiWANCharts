@@ -143,7 +143,7 @@ userData: |-
    - export HTTPS_PROXY="http://{{ .Values.proxy.httpsaddress }}" 
    - export HTTP_PROXY="http://{{ .Values.proxy.httpaddress }}" 
    - curl -L https://helm.flexiwan.com/scripts/smartedge.sh --output /tmp/smartedge.sh
-   - chmod, 775, /tmp/smartedge.sh 
+   - chmod 775 /tmp/smartedge.sh 
    - tmp/smartedge.sh
 {{- end }}
 
