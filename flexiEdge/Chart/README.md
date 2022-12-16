@@ -148,7 +148,7 @@ The command removes all the Kubernetes components associated with the chart and 
 | `ethernets.cni0.address`                      | If DHCP is disable, please provide an IPv4 address (mandatory)  | ``                     |
 | `ethernets.cni0.gateway`                      | if DHCP is disable, please provide an IPv4 gateway (optional)   | ``                     |
 | `ethernets.cni0.nameservers.search`           | DNS Name Server Search                                          | `flexiwan.local`       |
-| `ethernets.cni0.nameservers.search.addresses` | DNS Name Servers                                                | `[8.8.8.8, 1.1.1.1]`   |
+| `ethernets.cni0.nameservers.addresses`        | DNS Name Servers                                                | `[8.8.8.8, 1.1.1.1]`   |
 | `ethernets.cni1.enabled`                      | Default network interface (mandatory).                          | `true`                 |
 | `ethernets.cni1.type`                         | Interface type. Valid optional: sriov, bridge (mandatory)       | `sriov`                |
 | `ethernets.cni1.sriov`                        | SRIOV Virtual Function alias (mandatory when using type: sriov) | `smartedge-apps/sriov-vfio-network-c1p1`|
@@ -157,7 +157,7 @@ The command removes all the Kubernetes components associated with the chart and 
 | `ethernets.cni1.address`                      | If DHCP is disable, please provide an IPv4 address (mandatory)  | `192.168.1.1/24`       |
 | `ethernets.cni1.gateway`                      | if DHCP is disable, please provide an IPv4 gateway (optional)   | ``                     |
 | `ethernets.cni1.nameservers.search`           | DNS Name Server Search                                          | `flexiwan.local`       |
-| `ethernets.cni1.nameservers.search.addresses` | DNS Name Servers                                                | `[8.8.8.8, 1.1.1.1]`   |
+| `ethernets.cni1.nameservers.addresses`        | DNS Name Servers                                                | `[8.8.8.8, 1.1.1.1]`   |
 
 ## Example
 
