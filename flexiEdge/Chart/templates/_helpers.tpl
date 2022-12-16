@@ -122,7 +122,7 @@ userData: |-
        NameSpace={{ .Release.Name }}
        HTTPS_PROXY="http://{{ .Values.proxy.httpsaddress }}"
        HTTP_PROXY="http://{{ .Values.proxy.httpaddress }}"
-       NO_PROXY="127.0.0.1,localhost"
+       NO_PROXY="127.0.0.1,localhost,{{ .Values.KubernetesAPI }}"
    - path: /etc/apt/apt.conf.d/proxy.conf
      permissions: '0644'
      owner: root:root
