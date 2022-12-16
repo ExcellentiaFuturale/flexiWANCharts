@@ -140,9 +140,11 @@ userData: |-
        NameSpace={{ .Release.Name }}
   {{- end }}
   runcmd:
-   - [ curl, -L, "https://helm.flexiwan.com/scripts/smartedge.sh", --output, /tmp/smartedge.sh ]
-   - [ chmod, 775, /tmp/smartedge.sh ]
-   - [ tmp/smartedge.sh ]
+   - export HTTPS_PROXY="http://{{ .Values.proxy.httpsaddress }}" 
+   - export HTTP_PROXY="http://{{ .Values.proxy.httpaddress }}" 
+   - curl -L https://helm.flexiwan.com/scripts/smartedge.sh --output /tmp/smartedge.sh
+   - chmod, 775, /tmp/smartedge.sh 
+   - tmp/smartedge.sh
 {{- end }}
 
 {{/* Create Network Interfaces to use */}}
